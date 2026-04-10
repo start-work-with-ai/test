@@ -47,13 +47,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Basic client-side validation
       if (!data.name || !data.email) {
-        showFormMessage('Please fill in all required fields.', 'error');
+        showFormMessage(contactForm, 'Please fill in all required fields.', 'error');
         return;
       }
 
       // In a real app this would POST to a server.
       // For now we'll just show a success message.
       showFormMessage(
+        contactForm,
         'Thank you! We\'ll get back to you within 24 hours.',
         'success'
       );
@@ -62,13 +63,14 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /**
-   * Display a temporary message below the contact form.
+   * Display a temporary message below the given form.
+   * @param {HTMLFormElement} form
    * @param {string} text
    * @param {'success' | 'error'} type
    */
-  function showFormMessage(text, type) {
+  function showFormMessage(form, text, type) {
     // Remove existing message if present
-    const existing = contactForm.querySelector('.form-message');
+    const existing = form.querySelector('.form-message');
     if (existing) existing.remove();
 
     const msg = document.createElement('p');
@@ -88,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
       msg.style.color = '#c0392b';
     }
 
-    contactForm.appendChild(msg);
+    form.appendChild(msg);
 
     // Auto-remove after 5 seconds
     setTimeout(() => msg.remove(), 5000);
@@ -121,8 +123,4 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-// Global CSS class added by IntersectionObserver
-document.head.insertAdjacentHTML(
-  'beforeend',
-  '<style>.revealed{opacity:1!important;transform:translateY(0)!important;}</style>'
-);
+

@@ -624,6 +624,12 @@ ul {
   }
 }
 
+/* ---------- Scroll reveal ---------- */
+.revealed {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
 @media (max-width: 768px) {
   /* Mobile nav */
   .nav-toggle {
