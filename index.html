@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Discover unforgettable guided tours with expert local guides. Explore cities, nature, culture, and adventure tours around the world.">
   <title>Wanderly — Expert Tour Guides</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin="">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -15,46 +18,50 @@
       <a href="#" class="logo">Wanderly</a>
       <nav class="main-nav" id="main-nav">
         <ul class="nav-list">
-          <li><a href="#tours">Tours</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#testimonials">Testimonials</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#tours" data-i18n="nav.tours">Tours</a></li>
+          <li><a href="#about" data-i18n="nav.about">About</a></li>
+          <li><a href="#testimonials" data-i18n="nav.testimonials">Testimonials</a></li>
+          <li><a href="#explore" data-i18n="nav.explore">Explore Nearby</a></li>
+          <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
         </ul>
       </nav>
-      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-        <span class="hamburger"></span>
-      </button>
+      <div class="header-actions">
+        <button class="lang-toggle" id="lang-toggle" aria-label="Switch language" data-i18n="lang.switch">中文</button>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span class="hamburger"></span>
+        </button>
+      </div>
     </div>
   </header>
 
   <!-- ========== HERO ========== -->
   <section class="hero" id="hero">
     <div class="container hero-content">
-      <h1>Explore the World with&nbsp;Expert&nbsp;Guides</h1>
-      <p class="hero-sub">Immersive, locally-led tours that turn every trip into a story worth telling.</p>
-      <a href="#tours" class="btn btn-primary">Browse Tours</a>
+      <h1 data-i18n="hero.title">Explore the World with&nbsp;Expert&nbsp;Guides</h1>
+      <p class="hero-sub" data-i18n="hero.subtitle">Immersive, locally-led tours that turn every trip into a story worth telling.</p>
+      <a href="#tours" class="btn btn-primary" data-i18n="hero.cta">Browse Tours</a>
     </div>
   </section>
 
   <!-- ========== FEATURED TOURS ========== -->
   <section class="tours" id="tours">
     <div class="container">
-      <h2 class="section-title">Popular Tours</h2>
-      <p class="section-subtitle">Hand-picked experiences loved by travelers worldwide.</p>
+      <h2 class="section-title" data-i18n="tours.title">Popular Tours</h2>
+      <p class="section-subtitle" data-i18n="tours.subtitle">Hand-picked experiences loved by travelers worldwide.</p>
 
       <div class="tour-grid">
         <!-- Tour Card 1 -->
         <article class="tour-card">
           <div class="tour-card-img" style="background-image:url('https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=600&q=80')">
-            <span class="tour-badge">Best Seller</span>
+            <span class="tour-badge" data-i18n="tours.badge.bestseller">Best Seller</span>
           </div>
           <div class="tour-card-body">
-            <h3>Paris Walking Tour</h3>
-            <p class="tour-meta"><span>📍 Paris, France</span> <span>⏱ 3 hours</span></p>
-            <p>Stroll through charming arrondissements, discover hidden courtyards, and hear the stories behind iconic landmarks.</p>
+            <h3 data-i18n="tours.paris.title">Paris Walking Tour</h3>
+            <p class="tour-meta"><span data-i18n="tours.paris.meta">📍 Paris, France</span> <span data-i18n="tours.paris.duration">⏱ 3 hours</span></p>
+            <p data-i18n="tours.paris.desc">Stroll through charming arrondissements, discover hidden courtyards, and hear the stories behind iconic landmarks.</p>
             <div class="tour-footer">
-              <span class="tour-price">$59 <small>/ person</small></span>
-              <a href="#contact" class="btn btn-outline btn-sm">Book Now</a>
+              <span class="tour-price">$59 <small data-i18n="tours.price.person">/ person</small></span>
+              <a href="#contact" class="btn btn-outline btn-sm" data-i18n="tours.book">Book Now</a>
             </div>
           </div>
         </article>
@@ -62,15 +69,15 @@
         <!-- Tour Card 2 -->
         <article class="tour-card">
           <div class="tour-card-img" style="background-image:url('https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=600&q=80')">
-            <span class="tour-badge">New</span>
+            <span class="tour-badge" data-i18n="tours.badge.new">New</span>
           </div>
           <div class="tour-card-body">
-            <h3>Rome History &amp; Food Tour</h3>
-            <p class="tour-meta"><span>📍 Rome, Italy</span> <span>⏱ 4 hours</span></p>
-            <p>Taste authentic Roman cuisine while exploring ancient ruins and Renaissance architecture with a local historian.</p>
+            <h3 data-i18n="tours.rome.title">Rome History &amp; Food Tour</h3>
+            <p class="tour-meta"><span data-i18n="tours.rome.meta">📍 Rome, Italy</span> <span data-i18n="tours.rome.duration">⏱ 4 hours</span></p>
+            <p data-i18n="tours.rome.desc">Taste authentic Roman cuisine while exploring ancient ruins and Renaissance architecture with a local historian.</p>
             <div class="tour-footer">
-              <span class="tour-price">$75 <small>/ person</small></span>
-              <a href="#contact" class="btn btn-outline btn-sm">Book Now</a>
+              <span class="tour-price">$75 <small data-i18n="tours.price.person">/ person</small></span>
+              <a href="#contact" class="btn btn-outline btn-sm" data-i18n="tours.book">Book Now</a>
             </div>
           </div>
         </article>
@@ -78,15 +85,15 @@
         <!-- Tour Card 3 -->
         <article class="tour-card">
           <div class="tour-card-img" style="background-image:url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?w=600&q=80')">
-            <span class="tour-badge">Adventure</span>
+            <span class="tour-badge" data-i18n="tours.badge.adventure">Adventure</span>
           </div>
           <div class="tour-card-body">
-            <h3>Andes Hiking Expedition</h3>
-            <p class="tour-meta"><span>📍 Cusco, Peru</span> <span>⏱ 2 days</span></p>
-            <p>Trek through breathtaking mountain trails, visit remote villages, and camp under the stars in the Peruvian highlands.</p>
+            <h3 data-i18n="tours.andes.title">Andes Hiking Expedition</h3>
+            <p class="tour-meta"><span data-i18n="tours.andes.meta">📍 Cusco, Peru</span> <span data-i18n="tours.andes.duration">⏱ 2 days</span></p>
+            <p data-i18n="tours.andes.desc">Trek through breathtaking mountain trails, visit remote villages, and camp under the stars in the Peruvian highlands.</p>
             <div class="tour-footer">
-              <span class="tour-price">$189 <small>/ person</small></span>
-              <a href="#contact" class="btn btn-outline btn-sm">Book Now</a>
+              <span class="tour-price">$189 <small data-i18n="tours.price.person">/ person</small></span>
+              <a href="#contact" class="btn btn-outline btn-sm" data-i18n="tours.book">Book Now</a>
             </div>
           </div>
         </article>
@@ -94,15 +101,15 @@
         <!-- Tour Card 4 -->
         <article class="tour-card">
           <div class="tour-card-img" style="background-image:url('https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=600&q=80')">
-            <span class="tour-badge">Popular</span>
+            <span class="tour-badge" data-i18n="tours.badge.popular">Popular</span>
           </div>
           <div class="tour-card-body">
-            <h3>Tokyo After Dark</h3>
-            <p class="tour-meta"><span>📍 Tokyo, Japan</span> <span>⏱ 3 hours</span></p>
-            <p>Experience the neon-lit energy of Shinjuku, Shibuya, and hidden izakayas with a local nightlife expert.</p>
+            <h3 data-i18n="tours.tokyo.title">Tokyo After Dark</h3>
+            <p class="tour-meta"><span data-i18n="tours.tokyo.meta">📍 Tokyo, Japan</span> <span data-i18n="tours.tokyo.duration">⏱ 3 hours</span></p>
+            <p data-i18n="tours.tokyo.desc">Experience the neon-lit energy of Shinjuku, Shibuya, and hidden izakayas with a local nightlife expert.</p>
             <div class="tour-footer">
-              <span class="tour-price">$65 <small>/ person</small></span>
-              <a href="#contact" class="btn btn-outline btn-sm">Book Now</a>
+              <span class="tour-price">$65 <small data-i18n="tours.price.person">/ person</small></span>
+              <a href="#contact" class="btn btn-outline btn-sm" data-i18n="tours.book">Book Now</a>
             </div>
           </div>
         </article>
@@ -110,15 +117,15 @@
         <!-- Tour Card 5 -->
         <article class="tour-card">
           <div class="tour-card-img" style="background-image:url('https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=600&q=80')">
-            <span class="tour-badge">Nature</span>
+            <span class="tour-badge" data-i18n="tours.badge.nature">Nature</span>
           </div>
           <div class="tour-card-body">
-            <h3>Bali Rice Terrace Walk</h3>
-            <p class="tour-meta"><span>📍 Ubud, Bali</span> <span>⏱ 5 hours</span></p>
-            <p>Wander through emerald-green rice paddies, meet local farmers, and enjoy a traditional Balinese lunch.</p>
+            <h3 data-i18n="tours.bali.title">Bali Rice Terrace Walk</h3>
+            <p class="tour-meta"><span data-i18n="tours.bali.meta">📍 Ubud, Bali</span> <span data-i18n="tours.bali.duration">⏱ 5 hours</span></p>
+            <p data-i18n="tours.bali.desc">Wander through emerald-green rice paddies, meet local farmers, and enjoy a traditional Balinese lunch.</p>
             <div class="tour-footer">
-              <span class="tour-price">$45 <small>/ person</small></span>
-              <a href="#contact" class="btn btn-outline btn-sm">Book Now</a>
+              <span class="tour-price">$45 <small data-i18n="tours.price.person">/ person</small></span>
+              <a href="#contact" class="btn btn-outline btn-sm" data-i18n="tours.book">Book Now</a>
             </div>
           </div>
         </article>
@@ -126,18 +133,43 @@
         <!-- Tour Card 6 -->
         <article class="tour-card">
           <div class="tour-card-img" style="background-image:url('https://images.unsplash.com/photo-1568797629192-789acf8e4df3?w=600&q=80')">
-            <span class="tour-badge">Cultural</span>
+            <span class="tour-badge" data-i18n="tours.badge.cultural">Cultural</span>
           </div>
           <div class="tour-card-body">
-            <h3>Marrakech Medina Discovery</h3>
-            <p class="tour-meta"><span>📍 Marrakech, Morocco</span> <span>⏱ 4 hours</span></p>
-            <p>Navigate the vibrant souks, visit palaces and mosques, and uncover centuries of Moroccan craft traditions.</p>
+            <h3 data-i18n="tours.marrakech.title">Marrakech Medina Discovery</h3>
+            <p class="tour-meta"><span data-i18n="tours.marrakech.meta">📍 Marrakech, Morocco</span> <span data-i18n="tours.marrakech.duration">⏱ 4 hours</span></p>
+            <p data-i18n="tours.marrakech.desc">Navigate the vibrant souks, visit palaces and mosques, and uncover centuries of Moroccan craft traditions.</p>
             <div class="tour-footer">
-              <span class="tour-price">$55 <small>/ person</small></span>
-              <a href="#contact" class="btn btn-outline btn-sm">Book Now</a>
+              <span class="tour-price">$55 <small data-i18n="tours.price.person">/ person</small></span>
+              <a href="#contact" class="btn btn-outline btn-sm" data-i18n="tours.book">Book Now</a>
             </div>
           </div>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== EXPLORE NEARBY (MAP) ========== -->
+  <section class="explore" id="explore">
+    <div class="container">
+      <h2 class="section-title" data-i18n="explore.title">Explore Nearby</h2>
+      <p class="section-subtitle" data-i18n="explore.subtitle">Discover tourism resources around your current location.</p>
+
+      <div class="explore-controls">
+        <div class="explore-search-bar">
+          <input type="text" id="explore-search-input" class="explore-search-input"
+            data-i18n-placeholder="explore.search.placeholder" placeholder="Search a place or address…">
+          <button class="btn btn-primary btn-sm" id="search-nearby-btn" data-i18n="explore.search">🔍 Search Nearby</button>
+        </div>
+        <button class="btn btn-outline btn-sm" id="locate-btn" data-i18n="explore.locate">📍 Locate Me</button>
+      </div>
+
+      <div class="explore-body">
+        <div class="explore-map-wrap">
+          <div id="explore-map" class="explore-map"></div>
+          <p id="explore-status" class="explore-status" style="display:none;"></p>
+        </div>
+        <div id="explore-results" class="explore-results"></div>
       </div>
     </div>
   </section>
@@ -149,24 +181,24 @@
         <img src="https://images.unsplash.com/photo-1522199710521-72d69614c702?w=600&q=80" alt="Tour guide leading a group" loading="lazy">
       </div>
       <div class="about-text">
-        <h2 class="section-title">Why Wanderly?</h2>
-        <p>We connect curious travelers with passionate, certified local guides who know every hidden gem. Every tour is crafted to be small-group, immersive, and genuinely memorable.</p>
+        <h2 class="section-title" data-i18n="about.title">Why Wanderly?</h2>
+        <p data-i18n="about.desc">We connect curious travelers with passionate, certified local guides who know every hidden gem. Every tour is crafted to be small-group, immersive, and genuinely memorable.</p>
         <ul class="about-features">
           <li>
-            <strong>🌍 Local Expertise</strong>
-            <span>Guides born and raised in the destinations they lead.</span>
+            <strong data-i18n="about.local.title">🌍 Local Expertise</strong>
+            <span data-i18n="about.local.desc">Guides born and raised in the destinations they lead.</span>
           </li>
           <li>
-            <strong>👥 Small Groups</strong>
-            <span>Maximum 12 travelers for a personal experience.</span>
+            <strong data-i18n="about.small.title">👥 Small Groups</strong>
+            <span data-i18n="about.small.desc">Maximum 12 travelers for a personal experience.</span>
           </li>
           <li>
-            <strong>💰 Fair Pricing</strong>
-            <span>No hidden fees — guides keep 85% of the booking price.</span>
+            <strong data-i18n="about.fair.title">💰 Fair Pricing</strong>
+            <span data-i18n="about.fair.desc">No hidden fees — guides keep 85% of the booking price.</span>
           </li>
           <li>
-            <strong>⭐ Verified Reviews</strong>
-            <span>Every review comes from a confirmed booking.</span>
+            <strong data-i18n="about.reviews.title">⭐ Verified Reviews</strong>
+            <span data-i18n="about.reviews.desc">Every review comes from a confirmed booking.</span>
           </li>
         </ul>
       </div>
@@ -176,31 +208,31 @@
   <!-- ========== TESTIMONIALS ========== -->
   <section class="testimonials" id="testimonials">
     <div class="container">
-      <h2 class="section-title">What Travelers Say</h2>
-      <p class="section-subtitle">Real stories from our community of explorers.</p>
+      <h2 class="section-title" data-i18n="testimonials.title">What Travelers Say</h2>
+      <p class="section-subtitle" data-i18n="testimonials.subtitle">Real stories from our community of explorers.</p>
 
       <div class="testimonial-grid">
         <blockquote class="testimonial-card">
-          <p>&ldquo;Our guide Luca made Rome feel like home. We ate at places we'd never have found on our own. Absolutely magical.&rdquo;</p>
+          <p data-i18n="testimonials.1.text">&ldquo;Our guide Luca made Rome feel like home. We ate at places we'd never have found on our own. Absolutely magical.&rdquo;</p>
           <footer>
-            <strong>Sarah M.</strong>
-            <span>Rome History &amp; Food Tour</span>
+            <strong data-i18n="testimonials.1.name">Sarah M.</strong>
+            <span data-i18n="testimonials.1.tour">Rome History &amp; Food Tour</span>
           </footer>
         </blockquote>
 
         <blockquote class="testimonial-card">
-          <p>&ldquo;The Andes trek was the highlight of my year. The guide's knowledge of the terrain and culture was incredible.&rdquo;</p>
+          <p data-i18n="testimonials.2.text">&ldquo;The Andes trek was the highlight of my year. The guide's knowledge of the terrain and culture was incredible.&rdquo;</p>
           <footer>
-            <strong>James T.</strong>
-            <span>Andes Hiking Expedition</span>
+            <strong data-i18n="testimonials.2.name">James T.</strong>
+            <span data-i18n="testimonials.2.tour">Andes Hiking Expedition</span>
           </footer>
         </blockquote>
 
         <blockquote class="testimonial-card">
-          <p>&ldquo;Wanderly makes it so easy to find quality tours. I've booked three trips already and each one exceeded expectations.&rdquo;</p>
+          <p data-i18n="testimonials.3.text">&ldquo;Wanderly makes it so easy to find quality tours. I've booked three trips already and each one exceeded expectations.&rdquo;</p>
           <footer>
-            <strong>Aiko K.</strong>
-            <span>Tokyo After Dark</span>
+            <strong data-i18n="testimonials.3.name">Aiko K.</strong>
+            <span data-i18n="testimonials.3.tour">Tokyo After Dark</span>
           </footer>
         </blockquote>
       </div>
@@ -211,8 +243,8 @@
   <section class="contact" id="contact">
     <div class="container contact-grid">
       <div class="contact-text">
-        <h2 class="section-title">Ready to Explore?</h2>
-        <p>Fill out the form and we'll match you with the perfect guide. Or reach out directly — we'd love to hear from you.</p>
+        <h2 class="section-title" data-i18n="contact.title">Ready to Explore?</h2>
+        <p data-i18n="contact.desc">Fill out the form and we'll match you with the perfect guide. Or reach out directly — we'd love to hear from you.</p>
         <ul class="contact-info">
           <li>📧 <a href="mailto:hello@wanderly.com">hello@wanderly.com</a></li>
           <li>📞 +1 (555) 123-4567</li>
@@ -221,30 +253,30 @@
       </div>
       <form class="contact-form" id="contact-form">
         <div class="form-group">
-          <label for="name">Full Name</label>
-          <input type="text" id="name" name="name" required placeholder="Jane Doe">
+          <label for="name" data-i18n="contact.form.name">Full Name</label>
+          <input type="text" id="name" name="name" required data-i18n-placeholder="contact.form.name.placeholder" placeholder="Jane Doe">
         </div>
         <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required placeholder="jane@example.com">
+          <label for="email" data-i18n="contact.form.email">Email</label>
+          <input type="email" id="email" name="email" required data-i18n-placeholder="contact.form.email.placeholder" placeholder="jane@example.com">
         </div>
         <div class="form-group">
-          <label for="tour-select">Interested In</label>
+          <label for="tour-select" data-i18n="contact.form.tour">Interested In</label>
           <select id="tour-select" name="tour">
-            <option value="">Select a tour…</option>
-            <option value="paris">Paris Walking Tour</option>
-            <option value="rome">Rome History &amp; Food Tour</option>
-            <option value="andes">Andes Hiking Expedition</option>
-            <option value="tokyo">Tokyo After Dark</option>
-            <option value="bali">Bali Rice Terrace Walk</option>
-            <option value="marrakech">Marrakech Medina Discovery</option>
+            <option value="" data-i18n="contact.form.tour.default">Select a tour…</option>
+            <option value="paris" data-i18n="tours.paris.title">Paris Walking Tour</option>
+            <option value="rome" data-i18n="tours.rome.title">Rome History &amp; Food Tour</option>
+            <option value="andes" data-i18n="tours.andes.title">Andes Hiking Expedition</option>
+            <option value="tokyo" data-i18n="tours.tokyo.title">Tokyo After Dark</option>
+            <option value="bali" data-i18n="tours.bali.title">Bali Rice Terrace Walk</option>
+            <option value="marrakech" data-i18n="tours.marrakech.title">Marrakech Medina Discovery</option>
           </select>
         </div>
         <div class="form-group">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="4" placeholder="Tell us about your trip…"></textarea>
+          <label for="message" data-i18n="contact.form.message">Message</label>
+          <textarea id="message" name="message" rows="4" data-i18n-placeholder="contact.form.message.placeholder" placeholder="Tell us about your trip…"></textarea>
         </div>
-        <button type="submit" class="btn btn-primary btn-block">Send Inquiry</button>
+        <button type="submit" class="btn btn-primary btn-block" data-i18n="contact.form.submit">Send Inquiry</button>
       </form>
     </div>
   </section>
@@ -254,33 +286,39 @@
     <div class="container footer-inner">
       <div class="footer-brand">
         <a href="#" class="logo">Wanderly</a>
-        <p>Connecting travelers with the world's best local guides since 2024.</p>
+        <p data-i18n="footer.brand">Connecting travelers with the world's best local guides since 2024.</p>
       </div>
       <div class="footer-links">
-        <h4>Quick Links</h4>
+        <h4 data-i18n="footer.quick">Quick Links</h4>
         <ul>
-          <li><a href="#tours">Tours</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#testimonials">Testimonials</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#tours" data-i18n="nav.tours">Tours</a></li>
+          <li><a href="#about" data-i18n="nav.about">About</a></li>
+          <li><a href="#testimonials" data-i18n="nav.testimonials">Testimonials</a></li>
+          <li><a href="#explore" data-i18n="nav.explore">Explore Nearby</a></li>
+          <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
         </ul>
       </div>
       <div class="footer-links">
-        <h4>Legal</h4>
+        <h4 data-i18n="footer.legal">Legal</h4>
         <ul>
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Terms of Service</a></li>
-          <li><a href="#">Cookie Policy</a></li>
+          <li><a href="#" data-i18n="footer.privacy">Privacy Policy</a></li>
+          <li><a href="#" data-i18n="footer.terms">Terms of Service</a></li>
+          <li><a href="#" data-i18n="footer.cookies">Cookie Policy</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
       <div class="container">
-        <p>&copy; 2024 Wanderly. All rights reserved.</p>
+        <p data-i18n="footer.copy">&copy; 2024 Wanderly. All rights reserved.</p>
       </div>
     </div>
   </footer>
 
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
+  <script src="js/i18n.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/map.js"></script>
 </body>
 </html>

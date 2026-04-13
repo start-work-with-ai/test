@@ -602,6 +602,186 @@ ul {
 }
 
 /* ===================================================
+   LANGUAGE TOGGLE
+   =================================================== */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.lang-toggle {
+  background: transparent;
+  border: 1.5px solid var(--color-primary);
+  color: var(--color-primary);
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition);
+  white-space: nowrap;
+}
+
+.lang-toggle:hover {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+/* ===================================================
+   EXPLORE NEARBY (MAP)
+   =================================================== */
+.explore {
+  padding: 5rem 0;
+  background: var(--color-bg-alt);
+  text-align: center;
+}
+
+.explore-controls {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.explore-search-bar {
+  display: flex;
+  gap: 0.5rem;
+  flex: 1;
+  max-width: 500px;
+}
+
+.explore-search-input {
+  flex: 1;
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: border-color var(--transition), box-shadow var(--transition);
+  background: var(--color-bg);
+}
+
+.explore-search-input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-light);
+}
+
+.explore-body {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+  text-align: left;
+}
+
+.explore-map-wrap {
+  position: relative;
+}
+
+.explore-map {
+  width: 100%;
+  height: 450px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  z-index: 1;
+}
+
+.explore-status {
+  text-align: center;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-top: 0.75rem;
+  background: var(--color-primary-light);
+  color: var(--color-primary-dark);
+}
+
+.explore-status--error {
+  background: #ffeaea;
+  color: #c0392b;
+}
+
+.explore-results {
+  max-height: 450px;
+  overflow-y: auto;
+}
+
+.explore-results-heading {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--color-text);
+}
+
+.explore-results-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.explore-result-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: var(--color-bg);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.explore-result-item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.explore-result-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.explore-result-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.explore-result-info strong {
+  font-size: 0.95rem;
+  color: var(--color-text);
+}
+
+.explore-result-info small {
+  font-size: 0.8rem;
+  color: var(--color-text-light);
+}
+
+/* User location marker */
+.user-location-icon {
+  background: transparent;
+  border: none;
+}
+
+.user-location-pulse {
+  width: 20px;
+  height: 20px;
+  background: rgba(26, 127, 100, 0.4);
+  border: 3px solid var(--color-primary);
+  border-radius: 50%;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(2); opacity: 0; }
+}
+
+/* ===================================================
    RESPONSIVE
    =================================================== */
 @media (max-width: 900px) {
@@ -612,6 +792,18 @@ ul {
 
   .about-image img {
     height: 300px;
+  }
+
+  .explore-body {
+    grid-template-columns: 1fr;
+  }
+
+  .explore-map {
+    height: 350px;
+  }
+
+  .explore-results {
+    max-height: 300px;
   }
 
   .footer-inner {
@@ -667,5 +859,18 @@ ul {
 
   .section-title {
     font-size: 1.6rem;
+  }
+
+  .explore-controls {
+    flex-direction: column;
+  }
+
+  .explore-search-bar {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .explore-map {
+    height: 280px;
   }
 }

@@ -47,17 +47,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Basic client-side validation
       if (!data.name || !data.email) {
-        showFormMessage(contactForm, 'Please fill in all required fields.', 'error');
+        const errorMsg = (typeof t === 'function') ? t('contact.form.error') : 'Please fill in all required fields.';
+        showFormMessage(contactForm, errorMsg, 'error');
         return;
       }
 
       // In a real app this would POST to a server.
       // For now we'll just show a success message.
-      showFormMessage(
-        contactForm,
-        'Thank you! We\'ll get back to you within 24 hours.',
-        'success'
-      );
+      const successMsg = (typeof t === 'function') ? t('contact.form.success') : 'Thank you! We\'ll get back to you within 24 hours.';
+      showFormMessage(contactForm, successMsg, 'success');
       contactForm.reset();
     });
   }
