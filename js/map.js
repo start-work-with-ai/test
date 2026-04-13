@@ -196,7 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }),
           })
             .addTo(map)
-            .bindPopup(lang() === 'zh' ? '📍 您的位置' : '📍 Your location')
+            .bindPopup(tr('explore.user.location'))
             .openPopup();
 
           searchNearbyPOIs(latitude, longitude);

@@ -96,6 +96,7 @@ const translations = {
     'explore.category.park': 'Park',
     'explore.category.default': 'Point of Interest',
     'explore.results.title': 'Nearby Attractions',
+    'explore.user.location': '📍 Your location',
 
     // Contact
     'contact.title': 'Ready to Explore?',
@@ -217,6 +218,7 @@ const translations = {
     'explore.category.park': '公园',
     'explore.category.default': '兴趣点',
     'explore.results.title': '附近景点',
+    'explore.user.location': '📍 您的位置',
 
     // Contact
     'contact.title': '准备好探索了吗？',
@@ -268,7 +270,7 @@ function t(key, lang) {
 
 /**
  * Apply translations to all elements with [data-i18n] attributes.
- * Supports data-i18n (textContent), data-i18n-placeholder, data-i18n-label, data-i18n-aria.
+ * Supports data-i18n (textContent) and data-i18n-placeholder.
  * @param {'en' | 'zh'} lang
  */
 function applyTranslations(lang) {
@@ -280,11 +282,6 @@ function applyTranslations(lang) {
   document.querySelectorAll('[data-i18n-placeholder]').forEach((el) => {
     const key = el.getAttribute('data-i18n-placeholder');
     if (key) el.placeholder = t(key, lang);
-  });
-
-  document.querySelectorAll('[data-i18n-html]').forEach((el) => {
-    const key = el.getAttribute('data-i18n-html');
-    if (key) el.innerHTML = t(key, lang);
   });
 
   // Update the html lang attribute
