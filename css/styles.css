@@ -782,6 +782,277 @@ ul {
 }
 
 /* ===================================================
+   TRAVEL ROUTES
+   =================================================== */
+.routes {
+  padding: 5rem 0;
+}
+
+.routes .section-title,
+.routes .section-subtitle {
+  text-align: center;
+}
+
+.routes-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.route-card {
+  background: var(--color-bg);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.route-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.route-card-header {
+  height: 240px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  padding: 1.5rem;
+}
+
+.route-card-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.65), transparent 60%);
+}
+
+.route-card-header h3 {
+  position: relative;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.route-card-body {
+  padding: 1.5rem 2rem 2rem;
+}
+
+.route-intro {
+  color: var(--color-text-light);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.route-meta-info {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+}
+
+.route-details h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+
+.route-stops {
+  list-style: none;
+  counter-reset: route-stop;
+  padding: 0;
+}
+
+.route-stops li {
+  counter-increment: route-stop;
+  position: relative;
+  padding: 0.75rem 0 0.75rem 2.5rem;
+  border-left: 3px solid var(--color-primary-light);
+  margin-left: 0.75rem;
+}
+
+.route-stops li::before {
+  content: counter(route-stop);
+  position: absolute;
+  left: -14px;
+  top: 0.75rem;
+  width: 26px;
+  height: 26px;
+  background: var(--color-primary);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.route-stops li strong {
+  color: var(--color-text);
+}
+
+.route-stops li span {
+  color: var(--color-text-light);
+  font-size: 0.9rem;
+}
+
+/* ===================================================
+   TRAVELER REVIEWS
+   =================================================== */
+.reviews {
+  padding: 5rem 0;
+  text-align: center;
+}
+
+.review-form-wrap {
+  max-width: 640px;
+  margin: 0 auto 3rem;
+  text-align: left;
+  background: var(--color-bg-alt);
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.review-form-wrap h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  color: var(--color-text);
+}
+
+/* Star Rating */
+.star-rating {
+  display: flex;
+  gap: 0.25rem;
+  margin-top: 0.35rem;
+}
+
+.star-btn {
+  background: none;
+  border: none;
+  font-size: 1.75rem;
+  cursor: pointer;
+  color: var(--color-border);
+  transition: color var(--transition), transform var(--transition);
+  padding: 0;
+  line-height: 1;
+}
+
+.star-btn:hover,
+.star-btn.active {
+  color: var(--color-accent);
+  transform: scale(1.15);
+}
+
+/* Reviews List */
+.reviews-list {
+  text-align: left;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.reviews-list h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: var(--color-text);
+}
+
+.reviews-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.review-card {
+  background: var(--color-bg-alt);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  border-left: 4px solid var(--color-accent);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.review-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.review-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.review-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.review-meta {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.review-meta strong {
+  font-size: 1rem;
+  color: var(--color-text);
+}
+
+.review-tour-label {
+  font-size: 0.8rem;
+  color: var(--color-text-light);
+}
+
+.review-stars {
+  font-size: 1.1rem;
+  color: var(--color-accent);
+  letter-spacing: 2px;
+  flex-shrink: 0;
+}
+
+.review-text {
+  color: var(--color-text-light);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 0.5rem;
+}
+
+.review-date {
+  color: var(--color-text-light);
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+.reviews-empty {
+  text-align: center;
+  color: var(--color-text-light);
+  font-size: 1rem;
+  padding: 2rem 0;
+}
+
+/* ===================================================
    RESPONSIVE
    =================================================== */
 @media (max-width: 900px) {
@@ -804,6 +1075,15 @@ ul {
 
   .explore-results {
     max-height: 300px;
+  }
+
+  .route-card-header {
+    height: 180px;
+  }
+
+  .route-meta-info {
+    flex-direction: column;
+    gap: 0.5rem;
   }
 
   .footer-inner {
