@@ -1,0 +1,248 @@
+/* ===================================================
+   Wanderly — Admin Panel Styles
+   =================================================== */
+
+/* ---------- Admin Header ---------- */
+.admin-header {
+  background: var(--color-text);
+  color: #fff;
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--shadow);
+}
+
+.admin-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.admin-header .logo {
+  color: #fff;
+  font-size: 1.35rem;
+}
+
+.admin-badge {
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ---------- Admin Main ---------- */
+.admin-main {
+  min-height: calc(100vh - 56px - 60px);
+  padding: 2rem 0;
+  background: var(--color-bg-alt);
+}
+
+/* ---------- Admin Tabs ---------- */
+.admin-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid var(--color-border);
+  padding-bottom: 0;
+  flex-wrap: wrap;
+}
+
+.admin-tab {
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text-light);
+  padding: 0.75rem 1.25rem;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  transition: color var(--transition), border-color var(--transition);
+  white-space: nowrap;
+}
+
+.admin-tab:hover {
+  color: var(--color-primary);
+}
+
+.admin-tab.active {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+}
+
+/* ---------- Admin Panels ---------- */
+.admin-panel {
+  background: var(--color-bg);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: var(--shadow);
+}
+
+.admin-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.admin-panel-header h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* ---------- Admin Form ---------- */
+.admin-form-wrap {
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.admin-form-wrap h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  color: var(--color-primary);
+}
+
+.admin-form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(250px, 100%), 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.admin-form-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+/* ---------- Admin Table ---------- */
+.admin-table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  min-width: 600px;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--color-border);
+  vertical-align: top;
+}
+
+.admin-table th {
+  background: var(--color-bg-alt);
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--color-text-light);
+  white-space: nowrap;
+}
+
+.admin-table tbody tr:hover {
+  background: var(--color-primary-light);
+}
+
+.admin-table .actions-cell {
+  white-space: nowrap;
+}
+
+.admin-table .actions-cell button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition);
+}
+
+.admin-table .actions-cell button:hover {
+  background: var(--color-border);
+}
+
+.admin-table .actions-cell .btn-edit {
+  color: var(--color-primary);
+}
+
+.admin-table .actions-cell .btn-delete {
+  color: #c0392b;
+}
+
+.admin-empty {
+  text-align: center;
+  color: var(--color-text-light);
+  padding: 2rem 1rem;
+  font-size: 0.95rem;
+}
+
+/* Truncate long text in table */
+.admin-table .text-truncate {
+  max-width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ---------- Admin Footer ---------- */
+.admin-footer {
+  background: var(--color-text);
+  color: #b2bec3;
+  text-align: center;
+  padding: 1.25rem 0;
+  font-size: 0.85rem;
+}
+
+.admin-footer a {
+  color: var(--color-primary);
+}
+
+.admin-footer a:hover {
+  color: #fff;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .admin-panel {
+    padding: 1.25rem;
+  }
+
+  .admin-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-panel-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .admin-tabs {
+    gap: 0;
+  }
+
+  .admin-tab {
+    font-size: 0.9rem;
+    padding: 0.6rem 0.9rem;
+  }
+}

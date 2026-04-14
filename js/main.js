@@ -56,6 +56,22 @@ document.addEventListener('DOMContentLoaded', () => {
       // For now we'll just show a success message.
       const successMsg = (typeof t === 'function') ? t('contact.form.success') : 'Thank you! We\'ll get back to you within 24 hours.';
       showFormMessage(contactForm, successMsg, 'success');
+
+      // Save inquiry to localStorage for admin panel
+      try {
+        const inquiries = JSON.parse(localStorage.getItem('wanderly-inquiries') || '[]');
+        inquiries.push({
+          name: data.name,
+          email: data.email,
+          tour: data.tour || '',
+          message: data.message || '',
+          date: new Date().toISOString(),
+        });
+        localStorage.setItem('wanderly-inquiries', JSON.stringify(inquiries));
+      } catch {
+        // Silently fail if localStorage is unavailable
+      }
+
       contactForm.reset();
     });
   }

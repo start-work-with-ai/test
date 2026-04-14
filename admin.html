@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wanderly — Admin Panel</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+  <!-- ========== ADMIN HEADER ========== -->
+  <header class="admin-header">
+    <div class="container admin-header-inner">
+      <a href="index.html" class="logo">Wanderly</a>
+      <span class="admin-badge">Admin Panel</span>
+    </div>
+  </header>
+
+  <!-- ========== ADMIN MAIN ========== -->
+  <main class="admin-main">
+    <div class="container">
+
+      <!-- Tab Navigation -->
+      <nav class="admin-tabs">
+        <button class="admin-tab active" data-tab="tours">🗺️ Tours</button>
+        <button class="admin-tab" data-tab="reviews">⭐ Reviews</button>
+        <button class="admin-tab" data-tab="inquiries">📧 Inquiries</button>
+      </nav>
+
+      <!-- ===== TOURS TAB ===== -->
+      <section class="admin-panel" id="panel-tours">
+        <div class="admin-panel-header">
+          <h2>Tour Management</h2>
+          <button class="btn btn-primary btn-sm" id="add-tour-btn">+ Add Tour</button>
+        </div>
+
+        <!-- Tour Form (hidden by default) -->
+        <div class="admin-form-wrap" id="tour-form-wrap" style="display:none;">
+          <h3 id="tour-form-title">Add New Tour</h3>
+          <form id="tour-form" class="admin-form">
+            <input type="hidden" id="tour-id" name="tourId">
+            <div class="admin-form-grid">
+              <div class="form-group">
+                <label for="tour-key">Tour Key (unique ID)</label>
+                <input type="text" id="tour-key" name="tourKey" required placeholder="e.g., hongkong">
+              </div>
+              <div class="form-group">
+                <label for="tour-title">Title</label>
+                <input type="text" id="tour-title-input" name="tourTitle" required placeholder="e.g., Hong Kong Highlights Tour">
+              </div>
+              <div class="form-group">
+                <label for="tour-title-zh">Title (Chinese)</label>
+                <input type="text" id="tour-title-zh" name="tourTitleZh" placeholder="e.g., 香港精华之旅">
+              </div>
+              <div class="form-group">
+                <label for="tour-location">Location</label>
+                <input type="text" id="tour-location" name="tourLocation" required placeholder="e.g., Hong Kong, China">
+              </div>
+              <div class="form-group">
+                <label for="tour-location-zh">Location (Chinese)</label>
+                <input type="text" id="tour-location-zh" name="tourLocationZh" placeholder="e.g., 中国香港">
+              </div>
+              <div class="form-group">
+                <label for="tour-duration">Duration</label>
+                <input type="text" id="tour-duration-input" name="tourDuration" required placeholder="e.g., 5 hours">
+              </div>
+              <div class="form-group">
+                <label for="tour-price">Price ($)</label>
+                <input type="number" id="tour-price-input" name="tourPrice" required placeholder="e.g., 68" min="0">
+              </div>
+              <div class="form-group">
+                <label for="tour-badge-type">Badge</label>
+                <select id="tour-badge-type" name="tourBadge">
+                  <option value="popular">Popular</option>
+                  <option value="bestseller">Best Seller</option>
+                  <option value="new">New</option>
+                  <option value="adventure">Adventure</option>
+                  <option value="nature">Nature</option>
+                  <option value="cultural">Cultural</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="tour-image">Image URL</label>
+                <input type="url" id="tour-image" name="tourImage" placeholder="https://images.unsplash.com/...">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="tour-desc">Description (English)</label>
+              <textarea id="tour-desc" name="tourDesc" rows="3" required placeholder="Tour description in English..."></textarea>
+            </div>
+            <div class="form-group">
+              <label for="tour-desc-zh">Description (Chinese)</label>
+              <textarea id="tour-desc-zh" name="tourDescZh" rows="3" placeholder="中文旅游描述..."></textarea>
+            </div>
+            <div class="admin-form-actions">
+              <button type="submit" class="btn btn-primary">Save Tour</button>
+              <button type="button" class="btn btn-outline" id="cancel-tour-btn">Cancel</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Tours Table -->
+        <div class="admin-table-wrap">
+          <table class="admin-table" id="tours-table">
+            <thead>
+              <tr>
+                <th>Key</th>
+                <th>Title</th>
+                <th>Location</th>
+                <th>Duration</th>
+                <th>Price</th>
+                <th>Badge</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="tours-table-body"></tbody>
+          </table>
+          <p class="admin-empty" id="tours-empty" style="display:none;">No tours yet. Click "Add Tour" to create one.</p>
+        </div>
+      </section>
+
+      <!-- ===== REVIEWS TAB ===== -->
+      <section class="admin-panel" id="panel-reviews" style="display:none;">
+        <div class="admin-panel-header">
+          <h2>Review Management</h2>
+          <button class="btn btn-outline btn-sm" id="clear-reviews-btn">🗑️ Clear All User Reviews</button>
+        </div>
+        <div class="admin-table-wrap">
+          <table class="admin-table" id="reviews-table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Tour</th>
+                <th>Rating</th>
+                <th>Review</th>
+                <th>Date</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="reviews-table-body"></tbody>
+          </table>
+          <p class="admin-empty" id="reviews-empty" style="display:none;">No user-submitted reviews yet.</p>
+        </div>
+      </section>
+
+      <!-- ===== INQUIRIES TAB ===== -->
+      <section class="admin-panel" id="panel-inquiries" style="display:none;">
+        <div class="admin-panel-header">
+          <h2>Contact Inquiries</h2>
+          <button class="btn btn-outline btn-sm" id="clear-inquiries-btn">🗑️ Clear All Inquiries</button>
+        </div>
+        <div class="admin-table-wrap">
+          <table class="admin-table" id="inquiries-table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Tour</th>
+                <th>Message</th>
+                <th>Date</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="inquiries-table-body"></tbody>
+          </table>
+          <p class="admin-empty" id="inquiries-empty" style="display:none;">No inquiries yet.</p>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ========== ADMIN FOOTER ========== -->
+  <footer class="admin-footer">
+    <div class="container">
+      <p>&copy; 2024 Wanderly Admin. <a href="index.html">Back to Website</a></p>
+    </div>
+  </footer>
+
+  <script src="js/admin.js"></script>
+</body>
+</html>
