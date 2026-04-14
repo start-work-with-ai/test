@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ---- Reveal-on-scroll animation ----
   const revealElements = document.querySelectorAll(
-    '.tour-card, .testimonial-card, .about-grid, .contact-grid'
+    '.tour-card, .testimonial-card, .about-grid, .contact-grid, .route-card, .review-card, .review-form-wrap'
   );
 
   if ('IntersectionObserver' in window && revealElements.length) {
