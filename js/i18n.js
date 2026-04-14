@@ -52,6 +52,10 @@ const translations = {
     'tours.marrakech.meta': '📍 Marrakech, Morocco',
     'tours.marrakech.duration': '⏱ 4 hours',
     'tours.marrakech.desc': 'Navigate the vibrant souks, visit palaces and mosques, and uncover centuries of Moroccan craft traditions.',
+    'tours.hongkong.title': 'Hong Kong Highlights Tour',
+    'tours.hongkong.meta': '📍 Hong Kong, China',
+    'tours.hongkong.duration': '⏱ 5 hours',
+    'tours.hongkong.desc': 'Discover the dazzling skyline from Victoria Peak, ride the iconic Star Ferry across the harbour, and explore vibrant street markets and temples.',
     'tours.price.person': '/ person',
     'tours.book': 'Book Now',
 
@@ -104,6 +108,21 @@ const translations = {
     'routes.tokyo.stop4.desc': '— Savor local snacks and sake in authentic Japanese-style pubs.',
     'routes.tokyo.stop5.name': 'Tokyo Tower Night View',
     'routes.tokyo.stop5.desc': '— End with a breathtaking panoramic view of the illuminated cityscape.',
+    'routes.hongkong.title': 'Hong Kong Highlights Route',
+    'routes.hongkong.intro': 'Explore the vibrant fusion of East and West in Hong Kong. From soaring skyscrapers to ancient temples, bustling markets to tranquil harbours, this route showcases the best of Asia\'s World City.',
+    'routes.hongkong.distance': '📏 Total: 8.5 km',
+    'routes.hongkong.time': '⏱ Duration: 5 hours',
+    'routes.hongkong.difficulty': '💪 Difficulty: Moderate',
+    'routes.hongkong.stop1.name': 'Victoria Peak',
+    'routes.hongkong.stop1.desc': '— Begin with a scenic Peak Tram ride for breathtaking panoramic views of the city skyline and harbour.',
+    'routes.hongkong.stop2.name': 'Star Ferry Harbour Crossing',
+    'routes.hongkong.stop2.desc': '— Enjoy the iconic ferry ride across Victoria Harbour with stunning waterfront scenery.',
+    'routes.hongkong.stop3.name': 'Temple Street Night Market',
+    'routes.hongkong.stop3.desc': '— Immerse yourself in the vibrant atmosphere of street food stalls, fortune tellers, and local vendors.',
+    'routes.hongkong.stop4.name': 'Wong Tai Sin Temple',
+    'routes.hongkong.stop4.desc': '— Visit this iconic Taoist temple known for its beautiful architecture and fortune-telling traditions.',
+    'routes.hongkong.stop5.name': 'Tsim Sha Tsui Promenade',
+    'routes.hongkong.stop5.desc': '— End with the spectacular Symphony of Lights show over the harbour skyline.',
 
     // About
     'about.title': 'Why Wanderly?',
@@ -149,6 +168,7 @@ const translations = {
     'reviews.default.1.text': 'The Paris walking tour was absolutely magical! Our guide knew every hidden corner and shared fascinating stories. Highly recommend!',
     'reviews.default.2.text': 'Great combination of history and food in Rome. The pasta in Trastevere was unforgettable. Only wish it was a bit longer!',
     'reviews.default.3.text': 'Tokyo at night is incredible! The guide took us to amazing izakayas we would never have found on our own. A must-do experience!',
+    'reviews.default.4.text': 'Hong Kong is a city of contrasts and our guide captured it all perfectly. The Peak views were stunning, Temple Street was a sensory overload, and the harbour light show was the perfect ending!',
 
     // Explore Nearby (Map)
     'explore.title': 'Explore Nearby',
@@ -246,6 +266,10 @@ const translations = {
     'tours.marrakech.meta': '📍 摩洛哥马拉喀什',
     'tours.marrakech.duration': '⏱ 4小时',
     'tours.marrakech.desc': '穿梭于热闹的集市，参观宫殿和清真寺，揭开摩洛哥数百年手工艺传统。',
+    'tours.hongkong.title': '香港精华之旅',
+    'tours.hongkong.meta': '📍 中国香港',
+    'tours.hongkong.duration': '⏱ 5小时',
+    'tours.hongkong.desc': '从太平山顶欣赏迷人天际线，乘坐标志性的天星小轮穿越维多利亚港，探索充满活力的街市和古庙。',
     'tours.price.person': '/ 人',
     'tours.book': '立即预订',
 
@@ -298,6 +322,21 @@ const translations = {
     'routes.tokyo.stop4.desc': '— 在正宗日式酒馆中品尝当地小吃和清酒。',
     'routes.tokyo.stop5.name': '东京塔夜景',
     'routes.tokyo.stop5.desc': '— 以令人叹为观止的璀璨夜景全景结束旅程。',
+    'routes.hongkong.title': '香港精华路线',
+    'routes.hongkong.intro': '探索香港东西方文化的精彩融合。从高耸入云的摩天大楼到古老庙宇，从热闹非凡的街市到宁静的海港，这条路线展现亚洲国际都会的最佳风貌。',
+    'routes.hongkong.distance': '📏 全程：8.5 公里',
+    'routes.hongkong.time': '⏱ 时长：5 小时',
+    'routes.hongkong.difficulty': '💪 难度：适中',
+    'routes.hongkong.stop1.name': '太平山顶',
+    'routes.hongkong.stop1.desc': '— 乘坐山顶缆车，欣赏城市天际线和海港的壮丽全景。',
+    'routes.hongkong.stop2.name': '天星小轮维港穿越',
+    'routes.hongkong.stop2.desc': '— 乘坐标志性渡轮穿越维多利亚港，欣赏迷人的海滨风光。',
+    'routes.hongkong.stop3.name': '庙街夜市',
+    'routes.hongkong.stop3.desc': '— 沉浸在街头小吃摊、算命师和本地摊贩的热闹氛围中。',
+    'routes.hongkong.stop4.name': '黄大仙祠',
+    'routes.hongkong.stop4.desc': '— 参观这座以精美建筑和求签传统闻名的道教庙宇。',
+    'routes.hongkong.stop5.name': '尖沙咀海滨长廊',
+    'routes.hongkong.stop5.desc': '— 以维港上空壮观的"幻彩咏香江"灯光秀完美收尾。',
 
     // About
     'about.title': '为什么选择 Wanderly？',
@@ -343,6 +382,7 @@ const translations = {
     'reviews.default.1.text': '巴黎徒步之旅绝对是梦幻般的体验！导游了解每一个隐秘的角落，分享了迷人的故事。强烈推荐！',
     'reviews.default.2.text': '罗马的历史与美食结合得非常棒。特拉斯提弗列区的意面令人难忘。只希望时间能再长一点！',
     'reviews.default.3.text': '东京的夜晚太不可思议了！导游带我们去了自己永远找不到的绝妙居酒屋。必去的体验！',
+    'reviews.default.4.text': '香港是一座充满对比的城市，我们的导游完美地诠释了这一切。太平山顶的景色令人惊叹，庙街是一场感官盛宴，维港灯光秀是完美的结尾！',
 
     // Explore Nearby (Map)
     'explore.title': '探索周边',

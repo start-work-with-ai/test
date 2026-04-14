@@ -137,6 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
       tokyo: 'tours.tokyo.title',
       bali: 'tours.bali.title',
       marrakech: 'tours.marrakech.title',
+      hongkong: 'tours.hongkong.title',
     };
     const i18nKey = tourKeyMap[tourKey];
     return i18nKey ? tr(i18nKey) : tourKey;
@@ -168,6 +169,13 @@ document.addEventListener('DOMContentLoaded', () => {
         rating: 5,
         text: tr('reviews.default.3.text'),
         date: '2025-12-01',
+      },
+      {
+        name: 'Lisa C.',
+        tour: 'hongkong',
+        rating: 5,
+        text: tr('reviews.default.4.text'),
+        date: '2026-01-18',
       },
     ];
   }
